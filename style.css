@@ -47,6 +47,18 @@ table {
 html, body {
 	height: 100%;
 }
+
+html {
+	margin: 20px;
+	position:relative;
+}
+ 
+ .wrapper {
+ 	margin-left:auto;
+ 	margin-right: auto;
+ 	max-width: 1024px;
+ 	min-width: 320px;
+ }
 /***********************************************************************************/
 /*@font-face {
     font-family: 'OctinVintageBRgRegular';
@@ -322,21 +334,25 @@ html {
 #contact input {
 	display: block;
 	margin-bottom: 10px;
+	width: 100%;
 }
 
 #contact #submit {
-	margin: 20px 0 0 235px;
-	padding: 15px;
-	height:25px;
-	width: 50px;
+	margin: 0 auto;
+	width: 3em;
+	padding: 10px;
+	/*height: 25px;
+	width: 50px;*/
 	font-family: 'DistProTh';
-	font-size: 25px;
+	font-size: 1.5em;
+	border-radius: 4px;
+	background-color: lightgrey;
 }
 
 /* change this to fix the form */
 #contact #note {
 	padding-top:100%;
-	padding-right:100%;
+	/*padding-right:100%;*/
 }
 
 .footer {
@@ -352,14 +368,15 @@ html {
 #form_col1 {
 	float:left;
 	position:relative;
-	width:35%;
+	width:45%;
+	margin-right: 8%;
 /*	clear:both;*/
 
 }
 #form_col2 {
 	float:left;
 	position: relative;
-	width:35%;
+	width:45%;
 	/*clear:both;*/
 }
 
