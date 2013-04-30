@@ -218,10 +218,11 @@ html {
 	/*background-image: url('wood_1.png');*/
 	color: black;
 	padding: 15px;
-	width: 100%;
+	/*width: 100%;*/
 	/*height: 350px;*/
 /*	height: 100%;*/
 	position: relative;
+	overflow: auto;
 }
 
 #about h1, h2 {
@@ -234,40 +235,42 @@ html {
 	padding-bottom: 10px;
 }
 
-#about ul {
-	list-style-type: square;
-}
-
-	#about ul li {
+#about ul li {
 		padding-bottom: 10px;
+		/*list-style-type: square;*/
 	}
 
 
 #services {
 
 /*	height: 100%; *//*150px;*/
-	width: 100%; /*650px;*/
+	/*width: 100%; *//*650px;*/
 /*	margin: 0 0 0 -50px;*/
 	/*left:50%;*/
 	margin: 0 auto;
 	position: relative;
 	overflow: auto;
+	width: 50%;
 }
 	#col1, #col2{
-		width: 50%;
-		margin-bottom: 10px;
+	/*	width: 50%;*/
+		margin-bottom: .5em;
 	}
 
 		#col1 {
 			float:left;
-			text-align: left;
+		/*	text-align:right;*/
 			position:relative;
+			margin-right: 5%;
 		}
+
+		
 
 		#col2 {
 			float:left;
 			position:relative;
 			text-align: left;
+			margin-left: 5%;
 		/*	margin-right: 5px;
 		*/}
 /*******************************************************************/
@@ -327,7 +330,7 @@ html {
 #contact form {
 	width: 50%;
 /*	height: 100%;
-*/	margin: 0 auto;
+*/float: right;
 	position:relative;
 }
 
@@ -339,19 +342,20 @@ html {
 
 #contact #submit {
 	margin: 0 auto;
-	width: 3em;
-	padding: 10px;
+	width: 2.5em;
+	padding: 2px;
 	/*height: 25px;
 	width: 50px;*/
 	font-family: 'DistProTh';
-	font-size: 1.5em;
-	border-radius: 4px;
+	font-size: 1.3em;
+/*	border-radius: 4px;*/
 	background-color: lightgrey;
+	float: right;
 }
 
 /* change this to fix the form */
 #contact #note {
-	padding-top:100%;
+	padding-top:75%;
 	/*padding-right:100%;*/
 }
 
