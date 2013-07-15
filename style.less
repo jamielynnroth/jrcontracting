@@ -1,0 +1,288 @@
+@import url('styles/reset.css');
+@import url('styles/typography.less');
+
+
+html {
+	// max-width: 1200px;
+	box-sizing:border-box;
+}
+
+
+.header {
+	height: 125px;
+	padding: 10px;
+	// min-width: 1020px;
+	z-index: 2;
+	position:absolute;
+	width: 100%;
+	opacity: .7;
+	background-color: white;
+
+	#logo{
+		float:left;
+		display:block;
+		img {
+			height: 120px;
+			float:left;
+			// margin: 10px;
+		} //img
+	}  // #logo
+	 ul {
+		line-height: 100%; /*80px;*/
+		padding: 0;
+		float:left;
+		display:block;
+
+		li {
+			display: inline;
+			padding-right: 25px;
+			margin-top: 50px;
+			float: left;
+			color: white;
+		
+			a {
+				padding: 0;
+				margin: 0;
+				color:gray;
+				text-decoration: none;
+				font-family: 'DistProTh';
+				font-size: 1.3em; /*20px*/
+			} //a
+		} //li
+		// li:first-child {
+		// 	margin-left: 25px;
+		// }
+	} //ul 
+}// header
+
+
+
+
+
+
+#gallery {
+	border-top: 3px solid grey;
+	width: 100%;
+	img {
+		width: 100%;
+		display:block;
+		margin:0;
+		// border: 15px solid white;
+	} //img
+
+	#text_background {
+		background: whitesmoke;
+		height: 125px;
+		width: 65%;
+		opacity: .5;
+		z-index: 2;
+		position: absolute;
+		top: 605px;
+	}//#text_background
+
+	#photo_overlay {
+		position:absolute;
+		top: 625px;
+		z-index: 3;
+		padding-left: 30px;
+		padding-bottom: 30px;
+	}//#photo_overlay
+	} // gallery
+
+
+
+
+
+/*****************************************************************/
+#about {
+	/*background-image: url('wood_1.png');*/
+	color: black;
+	padding: 30px;
+	width: 100%;
+	/*height: 350px;*/
+/*	height: 100%;*/
+	position: relative;
+
+	h1, h2 {
+		color:black;
+	}
+	span {
+		text-align: center;
+	}
+	p {
+	padding-bottom: 10px;
+	}
+
+
+
+	#services {
+		// width: 70%; 
+		margin: 0 auto;
+		position: relative;
+		overflow: auto;
+		display:block;
+
+		ul {
+		list-style-type: square;
+		margin-bottom: 10px;
+		background-color:lightblue;
+			li {
+				padding-bottom: 10px;
+			}// li
+		}//ul
+
+			#col1 {
+				float:left;
+				text-align: left;
+				position:relative;
+			}
+
+			#col2 {
+				float:left;
+				position:relative;
+				text-align: left;
+			}
+
+
+	} // services
+
+} // #about
+
+/*******************************************************************/
+/*#customers {
+	background: url('tiny_grid.png');
+	height: 200px;
+	width: 100%;
+	padding: 30px;
+}
+*/
+/*#customers h1 {
+	margin:0 auto;
+	text-align: center;
+}
+*//*******************************************************************/
+#team {
+	background-image: url('assets/wood_1.png');
+	padding-top: 15px;
+	clear:both;
+	color:white;
+/*	position:absolute;*/
+	padding: 30px;
+/*	height: 650px;
+*/	overflow: auto;
+
+	p {
+		padding-bottom: 10px;
+	}
+
+	h1, h2 {
+		color:white;
+	}
+
+	h1 {
+		text-align: center;
+	}
+
+	#team_content {
+		// width: 70%;
+		height: 100%;
+		float:right;
+	}
+
+	#more {
+		padding: 5px;
+		font-family: "RokkittRegular";
+		font-weight:bold;
+		font-size: 30px;
+		background-color: white;
+		color:black;
+		border:none;
+		text-align: center;
+	}
+}// #team
+
+/********************************************************************/
+#contact {
+	width:100%;
+/*	height: 100%;*/	
+	position:relative;
+	margin:0;
+	padding: 0;
+
+	h1 {
+		text-align: center;
+		clear:both;
+	}
+
+	form {
+		width: 50%;
+	/*	height: 100%;
+	*/	margin: 0 auto;
+		position:relative;
+
+		input {
+			display: block;
+			margin-bottom: 10px;
+		}
+		#submit {
+			margin: 20px 0 0 235px;
+			padding: 15px;
+			height:25px;
+			width: 50px;
+			font-family: 'DistProTh';
+			font-size: 25px;
+		}
+} // form
+
+/* change this to fix the form */
+#contact #note {
+	padding-top:100%;
+	padding-right:100%;
+}
+
+
+
+#form_col1 {
+	float:left;
+	position:relative;
+	width:35%;
+/*	clear:both;*/
+
+}
+#form_col2 {
+	float:left;
+	position: relative;
+	width:35%;
+	/*clear:both;*/
+}
+
+#formButton {
+	padding: 7px;
+	font-family: "RokkittRegular";
+	font-weight:bold;
+	font-size: 30px;
+	background-color: black;
+	color:white;
+	border:none;
+	margin: 0 auto;
+}
+
+
+.hidden {
+	display: none;
+}
+
+
+
+
+}
+
+.footer {
+	height: 50px;
+	width: 100%;
+	clear:both;
+
+	p {
+		padding: 20px;
+	}
+}
