@@ -7,16 +7,22 @@ html {
 	box-sizing:border-box;
 }
 
+#shade {
+	opacity: .7;
+	background-color:white;
+	height: 145px;
+	width: 100%;
+	position:absolute;
+}
 
 .header {
 	height: 125px;
 	padding: 10px;
-	// min-width: 1020px;
+	width: 100%;
+		// min-width: 1020px;
 	z-index: 2;
 	position:absolute;
 	width: 100%;
-	opacity: .7;
-	background-color: white;
 
 	#logo{
 		float:left;
@@ -61,7 +67,11 @@ html {
 
 
 #gallery {
+	background-image: url("assets/FinalKitchen1.jpg");
+	background-size:cover;
 	border-top: 3px solid grey;
+	height:800px;
+
 	width: 100%;
 	img {
 		width: 100%;
@@ -184,7 +194,7 @@ html {
 	}
 
 	#team_content {
-		// width: 70%;
+		width: 70%;
 		height: 100%;
 		float:right;
 	}
