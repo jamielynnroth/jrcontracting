@@ -3,8 +3,29 @@
 
 
 html {
-	// max-width: 1200px;
+	max-width: 100%;
 	box-sizing:border-box;
+	overflow-y: hidden;
+	margin: 0 auto;
+}
+.subtext {
+	width: 568px;
+	// margin: 0 auto;
+	float: left;
+	padding-top: 20px;
+	clear: both;
+
+
+}
+.title {
+	float:left;
+	line-height: 1.2em;
+	text-align: center;
+	border:3px solid black;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 10px;
+
 }
 
 #shade {
@@ -12,49 +33,82 @@ html {
 	background-color:white;
 	height: 145px;
 	width: 100%;
-	position:absolute;
+	position:fixed;
+	z-index: 2;
 }
 
 .header {
 	height: 125px;
-	padding: 10px;
+	padding: 5px;
 	width: 100%;
 		// min-width: 1020px;
-	z-index: 2;
-	position:absolute;
+	z-index: 3;
+	position:fixed;
 	width: 100%;
 
 	#logo{
 		float:left;
 		display:block;
+		margin-left: 15px;
 		img {
 			height: 120px;
 			float:left;
 			// margin: 10px;
 		} //img
+		#jrctext {
+			position: absolute;
+			left: 175px;
+		}
 	}  // #logo
+
+	#selected {
+		width: 66px;
+		background: black;
+		height: 2px;
+	// 	background-color: lightblue;
+	// 	opacity: .5;
+	// 	height: 55px;
+	// 	width: 110px;
+		position: absolute;
+		right: 482px;
+		top: 83px;
+	}
 	 ul {
+	 	margin-top: 40px;
 		line-height: 100%; /*80px;*/
 		padding: 0;
 		float:right;
 		display:block;
+		border: 2px solid black;
+		margin-right: 100px;
 
 		li {
+			// border-right: 3px solid black;
+			margin-left: 25px;
 			display: inline;
 			padding-right: 25px;
-			margin-top: 50px;
+			// margin-top: 50px;
 			float: left;
-			color: white;
+			// color: white;
+			line-height: 40px;
+
 		
 			a {
 				padding: 0;
 				margin: 0;
-				color:gray;
+				color:black;
 				text-decoration: none;
-				font-family: 'DistProTh';
 				font-size: 1.3em; /*20px*/
+				text-transform: lowercase;
+				line-height: 40px;
+				position:relative;
+				top: 1px;
 			} //a
 		} //li
+
+		// li:last-child {
+		// 	border: none;
+		// 	}
 		// li:first-child {
 		// 	margin-left: 25px;
 		// }
@@ -83,7 +137,7 @@ html {
 	#text_background {
 		background: whitesmoke;
 		height: 125px;
-		width: 65%;
+		width: 55%;
 		opacity: .5;
 		z-index: 2;
 		position: absolute;
@@ -93,19 +147,21 @@ html {
 	#photo_overlay {
 		position:absolute;
 		top: 602px;
-		z-index: 3;
+		z-index: 2;
 		// padding-left: 30px;
 		// padding-bottom: 30px;
 		height: 125px;
-		width: 64.5%;
-		border: 3px solid white;
+		width: 55%;
+		// border: 3px solid white;
+		border-left: none;
 
 		h1 {
-			padding-top: 20px;
-			padding-left: 20px;
+			padding-top: 35px;
+			padding-left: 35px;
 		}
 		h2 {
-			padding-left: 20px;
+			padding-left: 35px;
+			padding-top: 5px;
 		}
 	}//#photo_overlay
 } // gallery
@@ -117,35 +173,36 @@ html {
 /*****************************************************************/
 #about {
 	/*background-image: url('wood_1.png');*/
+	z-index: 0;
 	color: black;
 	padding: 30px;
 	width: 100%;
 	/*height: 350px;*/
 /*	height: 100%;*/
 	position: relative;
+	padding-top: 175px;
+	padding-bottom: 175px;
 
 	h1, h2 {
 		color:black;
 	}
-	h1 {
-		border:3px solid black;
-		width: 235px;
-		margin: 0 auto;
-		line-height: 30px;
-	}
-	span {
-		text-align: center;
-	}
 	p {
 	padding-bottom: 10px;
 	}
-	.centertext {
-		width: 775px;
-		margin: 0 auto;
-		padding-top: 20px;
-	}
-	
 
+	img {
+		height: 568px;
+		position: relative;
+		top: -68px;
+		right: 215px;
+		float:right;
+	}
+
+	
+	.subtext {
+		margin-top: 40px;
+		margin-bottom: 40px;
+	}
 
 	#services {
 		// width: 70%; 
@@ -153,12 +210,21 @@ html {
 		position: relative;
 		overflow: auto;
 		display:block;
+		float:left;
 		width: 563px;
-
+		background: url('assets/struckaxiom.png');
+		border: 3px solid black;
+		h3 {
+			font-size: 1.3em;
+			padding: 10px;
+		}
+		h4 {
+			font-size: 1.2em;
+		}
 		ul {
 		list-style-type: square;
 		margin-bottom: 10px;
-		background-color:lightblue;
+		// background-color:lightblue;
 			li {
 				padding-bottom: 10px;
 			}// li
@@ -195,7 +261,7 @@ html {
 *//*******************************************************************/
 #team {
 	// background-image: url('assets/wood_1.png');
-	padding-top: 15px;
+	padding-top: 175px; //15px;
 	clear:both;
 	color:black;
 /*	position:absolute;*/
@@ -207,9 +273,9 @@ html {
 		padding-bottom: 10px;
 	}
 
-	h1, h2 {
-		color:white;
-	}
+	// h1, h2 {
+	// 	color:white;
+	// }
 
 	h1 {
 		text-align: center;
@@ -223,7 +289,7 @@ html {
 
 	#more {
 		padding: 5px;
-		font-family: "RokkittRegular";
+		font-family: "SoinSans-Bold";
 		font-weight:bold;
 		font-size: 30px;
 		background-color: white;
@@ -261,7 +327,7 @@ html {
 			padding: 15px;
 			height:25px;
 			width: 50px;
-			font-family: 'DistProTh';
+			font-family: 'SoinSans-Bold';
 			font-size: 25px;
 		}
 } // form
@@ -290,13 +356,14 @@ html {
 
 #formButton {
 	padding: 7px;
-	font-family: "RokkittRegular";
+	font-family: "SoinSans-Bold";
 	font-weight:bold;
 	font-size: 30px;
 	background-color: black;
 	color:white;
 	border:none;
 	margin: 0 auto;
+	line-height: 36px;
 }
 
 

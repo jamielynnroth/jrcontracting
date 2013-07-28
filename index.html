@@ -10,8 +10,8 @@
 
 <!-- Custom Scripts -->
 
-	<script type="text/javascript" src="jquery.js"></script>
-	<script type="text/javascript" src="javascript.js"></script>
+	<script type="text/javascript" src="scripts/jquery.js"></script>
+	<script type="text/javascript" src="scripts/javascript.js"></script>
 
 	<!-- Typekit embed -->
 	<script type="text/javascript" src="//use.typekit.net/tlx8qzu.js"></script>
@@ -24,16 +24,15 @@
 
 		<div class="header pure-u-1">
 			<div id="logo"class="pure-u-1-2">
-				<a href="#"><img src="assets/JRCLogo.jpg"></a>
+				<a href="#"><img id="icon" src="assets/JRC-Header-Logo.png"><img id="jrctext" src="assets/JRC-Header-Text.png"></a>
 			</div><!-- #logo-->
+			<div id="selected"></div>
 			<ul class="pure-u-1-2"> 
-				
-				<li><a href="#">Blog</a></li>
-				<li><a href="index.html#contact">Request a Quote</a></li>
-				<li><a href="index.html#team">Team</a></li> 
-				<li><a href="#">Our Customers</a></li>
+				<h3>
 				<li><a href="index.html#about">Services</a></li>
-
+				<li><a href="index.html#team">About</a></li><li><a href="#">Customers</a></li>
+				<li><a href="index.html#contact">Contact</a></li>
+			</h3>
 			</ul>
 		</div> <!-- .header-->
 
@@ -51,33 +50,37 @@
 				</div><!-- #gallery-->
 
 			<div id="about" class="pure-u-1">
-				<span><h1>Our Services</h1></span>
-				<div class="centertext pure-u-2-3">
+				<h1 class="title">Our Services</h1>
+				<div class="subtext pure-u-2-3">
 				
-					<h3>Joe Roth Contracting LLC  is a highly professional remodeling company that delivers exceptional craftsmanship and excellent project management.  From the initial measure through the design phase and installation of the cabinets we can create the kitchen of your dreams. Some of our services include:	</h3>
+					<h4>
+						<p>Joe Roth Contracting LLC  is a highly professional remodeling company that delivers exceptional craftsmanship and excellent project management.  From the initial measure through the design phase and installation of the cabinets we can create the kitchen of your dreams.</p>
+						
 				
 			</div>
-
+			
+			<img src="assets/bathroom1.jpg">
 
 				<div id="services" class="pure-u-2-3">
+					<h3> Some of our services include:</h3>
 					<ul class="pure-u-2-4" id="col1">
-					<h3>
+					<h4>
 						<li>Planning </li>
 						<li>Material Delivery</li>
 						<li>Building Permit </li>
 						<li>Scheduling</li>
 						<li>Cabinet Installation</li>
-					</h3>
+					</h4>
 					</ul><!-- #col1-->
 					
 					<ul class="pure-u-2-4" id='col2'>
-						<h3>
+						<h4>
 						<li>Demolition and Trash Haul away</li>
 						<li>Comprehensive Project Management</li>
 						<li>Site Protection - Floor & Walls</li>
 						<li>Flooring - Tile Wood, Laminate & Vinyl</li>
 						<li>Bathrooms & Custom Showers</li>
-					</h3>
+					</h4>
 					</ul><!--#col2-->
 				</div><!-- #services-->
 					
@@ -88,10 +91,11 @@
 		</div><!--#customers--> 
 		
 		<div id="team">
-			<span><h1>Our Team</h1></span>
-			<p>
-				<h3>Our employees are hand picked because of their craftsmanship and skill. They represent our company, and as part of that commitment they have dedicated themselves to bring 100% to every job. </h3>
-			</p>
+			<h1 class="title">Our Team</h1>
+			
+				<div class="subtext">
+				<h4>Our employees are hand picked because of their craftsmanship and skill. They represent our company, and as part of that commitment they have dedicated themselves to bring 100% to every job. </h4>
+			</div>
 			
 			<div id="team_content">
 
@@ -111,10 +115,17 @@
 
 				<div id="fullTeam" class="hidden">
 				<h2> Barbara Roth, COO </h2> 
-				<h3><p>Barbara is the best.</p><h3>
+				<h3><p>Barbara also has a BFA from Philadelphia College of Art, which is where
+				she and Joe first met. They have shared a collaboration of over 30 years in marriage and working together. Barbara's expertise is in office management and strong organizational proficiency. She has extensive experience in customer service with excellent communication skills.
+				</p><h3>
 
 				<h2>Bryan Kohler, Project Manager</h2>
-				<h3><p>Bryan is really great!</p></h3>
+				<h3><p>Bryan has been a loyal employee with Joe Roth Contracting for over 10
+				years. He started as a carpenter and has worked his way through the ranks to become a project manager. Bryan's hands on experience makes him knowledgeable in all aspects of running the job, from materials purchasing to the final install. Bryan is well respected by our customers who find him personable as well as a great communicator. We are thrilled to have Bryan as a member of the JRC team, and to over see all the Home Depot contracted jobs.</p></h3>
+
+				<h2> Carl Codling, Project Manager</h2>
+				<h3><p>Carl comes to us with over 33 years experience in the field. We call
+				him the MacGyver of JRC. Carl is the project manager for all JRC jobs and has extensive experience in all phases of remodeling. His goal is to get the job done with high quality craftsmanship while respecting clients and their property.</p></h3>
 			</div> <!-- .hidden -->
 			</div> <!-- #team_content -->
 		
@@ -126,12 +137,12 @@
 	</form>
 </div><!-- #contact --> 
 		
-<!-- 			<div id="contact">
+ 			<div id="contact">
 				<h1>Contact us for a custom quote:</h1>
 
 				<p><h2>Phone:</h2><h3> 888-888-8888</h3></p>
 
-				<form>
+				<!-- <form>
 					<fieldset id ="form_col1">
 					<h3>
 						<label for="first">First Name: </label>
@@ -145,7 +156,7 @@
 						<label for="zip">Zip Code: </label>
 						<input type="text" name="zip"></input>
 					</h3>
-					</fieldset><!-- #form_col1-->
+					</fieldset><!-- #form_col1 -->
 <!-- 					<fieldset id="form_col2">
 					<h3>
 						<label for name="note">How can we help?</label>
@@ -162,8 +173,7 @@
 
 <div class="footer">
 	<h5>
-
-	<p>&copy 2013 Joe Roth Contracting, LLC, a Home Depot certified contractor, is fully insured and up to date on all required MA Licenses. We carry General Liability and Workman’s comp. We follow the rules. We are Lead paint certified. Joe Roth Contracting , LLC, is fully insured to protect you and your family. </p>
+	<p>&copy 2013 Joe Roth Contracting, LLC, a Home Depot certified contractor, is fully insured and up to date on all required MA Licenses. <br>We carry General Liability and Workman’s comp. We follow the rules. We are lead paint certified. <br>Joe Roth Contracting , LLC, is fully insured to protect you and your family. </p>
 	</h5>
 </div><!-- .footer-->
 
