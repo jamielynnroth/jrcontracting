@@ -1,5 +1,6 @@
 $(document).ready(function (){
 
+// Shrink header and img + hide text when scrolling begins
 $(function(){
     $('#shade').data('size','big');
 });
@@ -61,6 +62,29 @@ $(window).scroll(function(){
 }
 );
 
+$(window).scroll(function(){
+if ($(window).scrollTop() < 803) {
+	$('#selected').hide()
+} else {
+	$('#selected').show()
+};
+
+
+if ($(window).scrollTop() > 803) {
+	$("#selected").stop().animate({
+		"right":"482px",
+		"width": "66px",
+		// "top": "80px"
+	},600);
+}
+else if ($(window).scrollTop() > 1554) {
+	$("#selected").stop().animate({
+		"right":"382px",
+		"width": "50px",
+		// "top": "80px"
+	},600);
+}
+}); // scroll fn
 }); // doc ready
 		
 		// $('.header').animate({
