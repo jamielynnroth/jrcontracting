@@ -62,22 +62,25 @@ $(window).scroll(function(){
 }
 );
 
+// slide selector bar to indicate current "page"
+// if at top of page, hide the bar
 $(window).scroll(function(){
-if ($(window).scrollTop() < 803) {
+if ($(window).scrollTop() < 800) {
 	$('#selected').hide()
 } else {
 	$('#selected').show()
 };
 
-
-if ($(window).scrollTop() > 803) {
+// if at the start of services page, show the bar and position under services
+if ($(window).scrollTop() > 800) {
 	$("#selected").stop().animate({
 		"right":"482px",
 		"width": "66px",
 		// "top": "80px"
 	},600);
 }
-else if ($(window).scrollTop() > 1554) {
+// if at start of team page, slide the bar to team and resize to fit word length
+else if ($(window).scrollTop() > 1550) {
 	$("#selected").stop().animate({
 		"right":"382px",
 		"width": "50px",
@@ -85,40 +88,24 @@ else if ($(window).scrollTop() > 1554) {
 	},600);
 }
 }); // scroll fn
+
+$('.employee').click(function () {
+	if ($(this).find('.employee').find('.teamshade').hasClass('hide') === true) {
+		$('teamshade').removeClass('hide');
+	} else if ($(this).find('.employee').find('.teamshade').hasClass('hide') === false) {
+		$(this).find('.teamshade').addClass('hide');
+	}
+}); // click fn
+// 	if $('this.employee').find('h2').hasClass('highlight') {
+// 		$(this).removeClass('highlight');
+// 	}, else {
+// 		$(this).addClass('highlight');
+// 	};
+// });
+
+
 }); // doc ready
 		
-		// $('.header').animate({
-		// 	height: '-=50px'
-		// }, 1000);
-		
-		// $('#logo').fadeOut('slow', function() {
-		// 	//animation complete
-		// });
-		
-// 		$('#shade').animate({
-// 			height: '-=50px'
-// 		}, 1000);
-	
-// 	}
-// }
-
-	//}); //docready 
-	// $(window).scroll(function(event) {
-	// 	event.stopPropagation();
-	// 	console.log('scrolling');
-	// 	$('.header').animate({
-	// 		height: '-=50px'
-	// 	}, 1000);
-	// 	$('#shade').animate({
-	// 		height: '-=50px'
-	// 	}, 1000);
-	// }); // scroll fn
 
 
-	// $('#more').click(
-	// 	function(){
-	// 		$(this).find('#fullTeam').removeClass('hidden')
-	// 		// $(this).find('#more').addClass('hidden')
-
-	// 	});
 
