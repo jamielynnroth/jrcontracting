@@ -13,36 +13,49 @@
 	<script type="text/javascript" src="scripts/javascript.js"></script>
 
 	<!-- Typekit embed -->
-	<script type="text/javascript" src="//use.typekit.net/tlx8qzu.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<!--<script type="text/javascript" src="//use.typekit.net/tlx8qzu.js"></script>
+	 <script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
 
 	<!-- MyFonts Kit Embed-->
-	<script type="text/javascript" src="scripts/MyFontsKit.js"></script>
+<!-- 	// <script type="text/javascript" src="scripts/MyFontsKit.js"></script> -->
 </head>
 
 <body class="pure-u-1">
-	<div class="wrapper">
+	<div id="home" class="wrapper">
 		<div id="shade"></div>
 
 		<div class="header pure-u-1">
-			<div id="logo"class="pure-u-1-2">
-				<a href="#"><img id="icon" src="assets/logos/JRC-Header-Logo.png"><img id="jrctext" src="assets/logos/JRC-Header-Text.png"></a>
+			<div id="logo" class="pure-u-1-2">
+				<a href="#home" class="scroll"><img id="icon" src="assets/logos/JRC-Header-Logo.png"><img id="jrctext" src="assets/logos/JRC-Header-Text.png"></a>
 			</div><!-- #logo-->
 			
 			<ul id="nav" class="pure-u-1-2"> 
 				<div id="selected" class="hide"></div>
 				<h3>
-				<li id="nav1"><a href="#about">Services</a></li>
-				<li id="nav2"><a href="#team">About</a></li><li><a href="#">Customers</a></li>
+				<li id="nav1"><a href="#about" class="scroll">Services</a></li>
+				<li id="nav2"><a href="#team" class="scroll">About</a></li><li><a href="#">Customers</a></li>
 				<li><a href="#contact">Contact</a></li>
 			</h3>
 			</ul>
 		</div> <!-- .header-->
 
 	<div id="content" class="pure-u-1">
-				<div id="gallery" class="pure-u-1">
-					<!-- <img src="assets/FinalKitchen1.jpg"> -->
-					
+		<div id="slider" class="slider">
+
+			<div class="holder">
+				<div class="slide" id="slide-0"></div>
+				<div class="slide" id="slide-1"></div>
+				<div class="slide" id="slide-2"></div>
+			</div>
+
+		</div><!-- #slider-->
+		
+		<nav class="slider-nav">
+			<a href="#slide-0" class="active">Slide 0</a>
+			<a href="#slide-1">Slide 2</a>
+			<a href="#slide-2">Slide 3</a>
+		</nav>
+
 					<div id="text_background" class="pure-u-2-3">
 					</div>
 
@@ -50,7 +63,7 @@
 						<h1>Full Service Remodeling</h1> 
 						<h2>Serving the Berkshires, Western Connecticut & Southern Vermont</h2>
 					</div> <!-- #photo_overlay-->
-				</div><!-- #gallery-->
+				
 
 			<div id="about" class="pure-u-1 section">
 				<h1 class="title">Our Services</h1>
@@ -99,7 +112,7 @@
 			
 			<div id="team_content">
 			<div id="joe" class='employee '>
-				<div class="teamshade hide"></div>
+				<div class="teamshade show"></div>
 			
 				<img src="assets/photos/joe.png">
 				<h2 class="highlight">Joseph Roth </h2>
@@ -139,9 +152,10 @@
 			</div>
 			<div id="biobox">
 								
-				<h4></p>Joe is a craftsman with over 30 years in the field.  His hands-on experience encompasses everything from designing and building custom furniture, installing cabinetry and trim, and custom tile work, to renovating entire houses. This experience combined with his solid foundation for craftsmanship and eye for detail allows Joe to consider the full scope of remodeling projects from start to finish.</p>
+				<h4>
+				<p class="joeBio">Joe is a craftsman with over 30 years in the field.  His hands-on experience encompasses everything from designing and building custom furniture, installing cabinetry and trim, and custom tile work, to renovating entire houses. This experience combined with his solid foundation for craftsmanship and eye for detail allows Joe to consider the full scope of remodeling projects from start to finish.</p>
 
-				<p>Joe’s management and sales experience is also extensive; from managing the manufacturing, delivery and installation of custom store fixtures and cabinetry, to custom bathrooms and kitchens, he has worked with thousands of clients to create their dreams. Joe holds a BFA in woodworking and furniture design from the University of the Arts in Philadelphia. </p>
+				<p class="joeBio">Joe’s management and sales experience is also extensive; from managing the manufacturing, delivery and installation of custom store fixtures and cabinetry, to custom bathrooms and kitchens, he has worked with thousands of clients to create their dreams. Joe holds a BFA in woodworking and furniture design from the University of the Arts in Philadelphia. </p>
 
 				<p id="barbBio" class="hide">Barbara also has a BFA from Philadelphia College of Art, which is where
 				she and Joe first met. They have shared a collaboration of over 30 years in marriage and working together. Barbara's expertise is in office management and strong organizational proficiency. She has extensive experience in customer service with excellent communication skills.

@@ -6,7 +6,7 @@ html {
 	min-width: 1200px;
 	max-width: 100%;
 	box-sizing:border-box;
-	overflow-y: hidden;
+	//overflow-y: hidden;
 	margin: 0 auto;
 	
 }
@@ -82,7 +82,7 @@ body {
 	// 	width: 110px;
 		position: absolute;
 		//right: 482px;
-		top: 80px;
+		top: 47px;
 	}
 	 ul {
 	 	margin-top: 40px;
@@ -116,36 +116,56 @@ body {
 				top: 1px;
 			} //a
 		} //li
-
-		// li:last-child {
-		// 	border: none;
-		// 	}
-		// li:first-child {
-		// 	margin-left: 25px;
-		// }
 	} //ul 
 }// header
 
 
 
 
+.slider {
+		width: 1600px;
+		height: 800px;
+		overflow-x: scroll;
+	}
 
+#slider {
+	#slide-0 {
+		background-image: url("assets/photos/FinalKitchen1.jpg");
+	}	
+	#slide-1 {
+		background-image: url("assets/photos/bathroom2.jpg");
+	}
+	#slide-2 {
+		background-image: url("assets/photos/bathroom3.jpg");
+	}
 
-#gallery {
-	background-image: url("assets/photos/FinalKitchen1.jpg");
-	background-size:cover;
-	border-top: 3px solid grey;
-	height:800px;
-
-	width: 100%;
-	img {
-		width: 100%;
-		display:block;
-		margin:0;
+	// background-size:cover;
+	// border-top: 3px solid grey;
+	// height:800px;
+	// width: 1600px;
+	//img {
+		//width: 100%;
+		//display:block;
+		//margin:0;
 		// border: 15px solid white;
-	} //img
+	//} //img
 
-	#text_background {
+	
+
+	.slide {
+		float:left;
+		width: 1600px;
+		height: 800px;
+	}
+	.holder {
+		width: 300%;
+		//border-top: 3px solid grey;
+	}
+
+	
+} // gallery
+
+#text_background {
 		background: whitesmoke;
 		height: 125px;
 		width: 55%;
@@ -175,9 +195,6 @@ body {
 			padding-top: 5px;
 		}
 	}//#photo_overlay
-} // gallery
-
-
 
 
 
@@ -336,7 +353,7 @@ body {
 		
 
 		}
-		.hide {
+		.show{
 			display:none;
 		}
 
