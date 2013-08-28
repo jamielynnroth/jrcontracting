@@ -36,7 +36,18 @@ body {
 	padding-top: 10px;
 	color: white;
 	text-transform: lowercase;
+}
 
+.titleInverse {
+	float:left;
+	line-height: 1.2em;
+	text-align: center;
+	border:3px solid black;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 10px;
+	color: black;
+	text-transform: lowercase;
 }
 
 #shade {
@@ -73,16 +84,12 @@ body {
 	}  // #logo
 
 	#selected {
-		// min-width: 30px;
 		background: black;
 		height: 2px;
-	// 	background-color: lightblue;
-	// 	opacity: .5;
-	// 	height: 55px;
-	// 	width: 110px;
+		min-width: 20px;
 		position: absolute;
-		//right: 482px;
-		top: 47px;
+		opacity: 1;
+		top: 48px;
 	}
 	 ul {
 	 	margin-top: 40px;
@@ -128,6 +135,25 @@ body {
 		overflow-x: scroll;
 	}
 
+.slider-nav {
+	position:relative;
+	display:block;
+	top: -40px;
+	z-index: 6;
+	left: 50%;
+
+	a {
+		background-color: white;
+		border-radius: 90px;
+		height: 10px;
+		width: 10px;
+		margin-right: 10px;
+		float:left;
+	}
+	a.active {
+		background-color:#DDF0E0;
+	}
+}
 #slider {
 	#slide-0 {
 		background-image: url("assets/photos/FinalKitchen1.jpg");
@@ -325,7 +351,9 @@ body {
 
 		img {
 			height: 250px;
-			padding-bottom: 15px;
+			border: 4px solid white;
+			border-radius: 180px;
+			margin-bottom: 15px;
 		}
 		.highlight {
 				color:black !important;
@@ -345,6 +373,7 @@ body {
 			}
 			.role {
 				font-family: SoinSansPro-Light;
+				
 			}
 		}
 		#joe.employee {
@@ -353,7 +382,7 @@ body {
 		
 
 		}
-		.show{
+		.show {
 			display:none;
 		}
 
@@ -365,6 +394,27 @@ body {
 			border-radius: 50%;
 			background-color:#D3D3D3;
 			opacity: .7;
+	
+		}
+
+		#joe .teamshade {
+			top: 54px;
+			left:4px;
+		}
+
+		#barbara .teamshade {
+			top: 54px;
+			left: 293px;
+		}
+
+		#bryan .teamshade {
+			top:54px;
+			left: 583px;
+		}
+
+		#carl .teamshade {
+			top: 54px;
+			left: 874px;
 		}
 
 		#biobox {
@@ -390,83 +440,148 @@ body {
 }// #team
 
 /********************************************************************/
-#contact {
-	width:100%;
-/*	height: 100%;*/	
-	position:relative;
-	margin:0;
-	padding: 0;
+//CONTACT POPUP
 
+#popupBox {
+	display:none;
+	position:fixed;
+	//_position:absolute; /*hack for IE*/
+	top: 50%;
+	left: 50%;
+	margin-top: -75px;
+	margin-left:-175px;
+	width: 350px;
+	height: 150px;
+	background: #FFFFFF;
+	
+	//top: 150px;
+	z-index: 100;
+	//margin-left: 15px;
+
+	border:2px solid #DDF0E0;      
+    padding:15px;  
+    font-size:15px;  
+    -moz-box-shadow: 0 0 5px #DDF0E0;
+    -webkit-box-shadow: 0 0 5px #DDF0E0;
+    box-shadow: 0 0 5px #DDF0E0;
 	h1 {
-		text-align: center;
-		clear:both;
+		margin-bottom: 25px;
+	}
+    h2 {
+    	clear:both;
+    	float:left;
+    }
+    h3 {
+    	float:left;
+    	padding-top: 8px;
+    	padding-left:5px;
+
+    	a {
+    		color: black;
+    	}
+    }
+}
+
+a {
+	cursor:pointer;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
 	}
 
-	form {
-		width: 50%;
-	/*	height: 100%;
-	*/	margin: 0 auto;
-		position:relative;
-
-		input {
-			display: block;
-			margin-bottom: 10px;
-		}
-		#submit {
-			margin: 20px 0 0 235px;
-			padding: 15px;
-			height:25px;
-			width: 50px;
-			font-family: 'SoinSans-Bold';
-			font-size: 25px;
-		}
-} // form
-
-/* change this to fix the form */
-#contact #note {
-	padding-top:100%;
-	padding-right:100%;
+#popupBoxClose {
+    // font-size:20px;  
+    // line-height:15px;  
+    right:5px;  
+    top:5px;  
+    //height:10px;
+    position:absolute;  
+    // color:grey;  
+    // font-weight:500;   
+    img {
+    	height: 20px;
+    }   
 }
 
+// #contact {
+// 	width:100%;
+// /*	height: 100%;*/	
+// 	position:relative;
+// 	margin:0;
+// 	padding: 0;
+
+// 	h1 {
+// 		text-align: center;
+// 		clear:both;
+// 	}
+
+// 	form {
+// 		width: 50%;
+// 	/*	height: 100%;
+// 	*/	margin: 0 auto;
+// 		position:relative;
+
+// 		input {
+// 			display: block;
+// 			margin-bottom: 10px;
+// 		}
+// 		#submit {
+// 			margin: 20px 0 0 235px;
+// 			padding: 15px;
+// 			height:25px;
+// 			width: 50px;
+// 			font-family: 'SoinSans-Bold';
+// 			font-size: 25px;
+// 		}
+// } // form
+
+//  change this to fix the form 
+// #contact #note {
+// 	padding-top:100%;
+// 	padding-right:100%;
+// }
 
 
-#form_col1 {
-	float:left;
-	position:relative;
-	width:35%;
-/*	clear:both;*/
 
-}
-#form_col2 {
-	float:left;
-	position: relative;
-	width:35%;
-	/*clear:both;*/
-}
+// #form_col1 {
+// 	float:left;
+// 	position:relative;
+// 	width:35%;
+// /*	clear:both;*/
 
-#formButton {
-	padding: 7px;
-	font-family: "SoinSans-Bold";
-	font-weight:bold;
-	font-size: 30px;
-	background-color: black;
-	color:white;
-	border:none;
-	margin: 0 auto;
-	line-height: 36px;
-}
+// }
+// #form_col2 {
+// 	float:left;
+// 	position: relative;
+// 	width:35%;
+// 	/*clear:both;*/
+// }
 
-
-.hidden {
-	display: none;
-}
+// #formButton {
+// 	padding: 7px;
+// 	font-family: "SoinSans-Bold";
+// 	font-weight:bold;
+// 	font-size: 30px;
+// 	background-color: black;
+// 	color:white;
+// 	border:none;
+// 	margin: 0 auto;
+// 	line-height: 36px;
+// }
 
 
+// .hidden {
+// 	display: none;
+// }
 
 
-}
+
+
+// }
 
 .footer {
+	border-top: 2px dotted white;
 	height: 50px;
 	width: 100%;
 	clear:both;

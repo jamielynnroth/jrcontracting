@@ -1,11 +1,41 @@
-// Smooth scrolling
-jQuery(document).ready(function($) {
-    $(".scroll").click(function(event){ 
+$(document).ready(function() {
+    // Smooth scrolling
+  $(".scroll").click(function(event){ 
         event.preventDefault();
         //console.log($(this));  
         $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
     });
-});
+
+
+    // When the contact link is clicked load the popup box
+
+        $('#nav4').click( function() {  
+            loadPopupBox();
+        });
+        
+        $('#popupBoxClose').click( function() {            
+            unloadPopupBox();
+        });
+        
+        $('#content').click( function() {
+            unloadPopupBox();
+        });
+
+        function unloadPopupBox() {    // TO Unload the Popupbox
+            $('#popupBox').fadeOut("slow");
+            $("#content").css({ // this is just for style        
+                "opacity": "1"  
+            }); 
+        }    
+        function loadPopupBox() {    // To Load the Popupbox
+                $('#popupBox').fadeIn("slow");
+                $("#content").css({ // this is just for style
+                    "opacity": "0.4"  
+                });         
+            }  
+    });
+
+
 
 // Shrink header and img + hide text when scrolling begins
 $(function(){
@@ -71,7 +101,7 @@ $(document).ready(function (){
 
 
 //NAVIGATION BAR ANIMATIONS
-
+ 
 //$(function () {
 //Rollover feedback on nav bar 
     $('#nav li a').hover(function() {
@@ -82,7 +112,7 @@ $(document).ready(function (){
         //Style the #selected bar to match the attributes of current li 
         $('#selected').stop().animate({
             left: leftPos,
-            width: setWidth
+            width: setWidth,
         }, 400, function() {
             $('#selected').stop().fadeIn(400);   
             });
@@ -97,20 +127,30 @@ $(document).ready(function (){
             } //if
             // else if 
             else {
-                $('#selected').stop().fadeIn(400);
-           
+                $('#selected').removeClass('hide');
+               $('#selected').css({'top' : '48' + 'px'});
+                // slide the bar back to current page when not being hovered upon
                 $('#nav li a').each(function() {
+                    var $el = $(this); 
+                    var pathname= $el.attr('href');
+                    pathname = pathname.split('/');
+                    pathname = pathname[pathname.length-1];
+
                     var url = window.location.href;
                     var urlArray = url.split('/');
                     var currentPage= urlArray[urlArray.length-1];
-                    if (window.location.hash === currentPage && window.location.hash !== 'home') {
-                        var origWidth = $('#selected').width();
-                        var origLeft = $('#selected').position().left;
+                    //var offset = $('#nav li a').position().top + 21; // height of a
+                    if (pathname === currentPage && window.location.hash !== 'home') {
+                        var origWidth = $(this).width();
+                        var origLeft = $(this).position().left;
+                           // $('#selected').css({'top': offset + 'px'});
                             $('#selected').stop().animate({
                                 left: origLeft,
-                                width: origWidth
+                                width: origWidth,
                             }, 400, function() {
                             //animation complete
+                            $('#selected').removeClass('hide');
+                            //$('#selected').css({'display': 'block'});
                             $('#selected').stop().fadeIn(400);
                         }); // callback
                     } // if
@@ -121,27 +161,28 @@ $(document).ready(function (){
 $('#nav').trigger('mouseout');
 
 
-
 $(window).scroll(function(event) { 
     event.preventDefault();
     event.stopPropagation();
 //check which sections have been scrolled past the top
-$('.section').each(function() {
+$('.section').each(function(event) {
+    //event.preventDefault();
+   // event.stopPropagation();
     if ($(window).scrollTop() < $('#about').position().top) {
         window.location.hash="home";
-        //return false;
+        return false;
     } 
     else if ($(window).scrollTop() >= $('#about').position().top && $(window).scrollTop() < $('#team').position().top) {
         //console.log('about');
         window.location.hash="about";
-        //return false;
+        return false;
     }
     else if ($(window).scrollTop() >= $('#team').position().top && $(window).scrollTop() > $('#about').position().top) {
         //console.log('team');
         window.location.hash="team";
-         //return false;
+         return false;
     }
-   // return false;
+  // return false;
     // else if ($(window).scrollTop() > $(this).position().top) {
     //     var currentSection = $(this).attr('id');
     //    // $(this).data($(this).attr('id'));
@@ -156,9 +197,13 @@ $('.section').each(function() {
 }); // each fn
 }); // scroll fn
 
-// On scroll, check the hash
-// Highlight the correct nav item 
+
+
+//On scroll, check the hash
+//Highlight the correct nav item 
 $(window).scroll(function() {
+     $('#selected').css({'top' : '48' + 'px'});
+
     if (window.location.hash==="#home") {
         $('#selected').hide();
     }
@@ -188,85 +233,9 @@ $(window).scroll(function() {
             $('#selected').stop().fadeIn(400);
     });
     }
+
 }); // scroll fn
 
-    // $('#selected').stop().animate({
-    //     left: leftPos,
-    //     width: setWidth
-    // }, 400, function() {
-    //     //animation complete
-    //     $('#selected').removeClass('hide');
-    //     $('#selected').stop().fadeIn(400);   
-    //     });
- //animate callback
-//}
-
-
-//             // On the landing page, make red bar disappear when nav is not being hovered upon
-//             if ($(window).scrollTop() < $('#about').position().top) {
-//                 //console.log('made it');
-//                 $('#selected').stop().fadeOut(400);
-//             }
-//             else {
-//                 // On any other page besides the home page
-//                 // Slide the bar back to the current page when nav is not being hovered upon
-//                 // for each link in the nav bar:
-//                 $('#nav ul li a').each(function() {
-
-//                     // For each link in the navbar, get the pathname
-//                     var $el = $(this); 
-//                     var pathname= $el.attr('href').split('/');
-//                     pathname = pathname[pathname.length-1];
-
-//                     // If the pathname is the same as the page that is loaded 
-//                     if (pathname === currentPage) {
-//                             // Get the position of the link and center check the left position
-//                             // to appropriately center the bar above it
-//                             var navItemWidth = $(this).width();
-//                             var barWidth = 110;
-//                             var diff = barWidth - navItemWidth;
-//                             var balance = diff/2;
-//                             var origLeftPos= $(this).position().left - balance;
-//                         // Move the bar to the correct position and then show it if its not already
-//                         $('#selected').stop().animate({
-//                             left: origLeftPos}, 400, function() {
-//                                 //animation complete
-//                                 $('#selected').removeClass('hide');
-//                             });
-//                     }
-//                 }); 
-// }
-       // });// hover
-// $(window).scroll(function() {
-//    // event.preventDefault();
-//     //event.stopPropagation();
-//     if ($(window).scrollTop() > $('#about').position().top) { 
-//      console.log('about');
-//    // add hash
-//    window.location.hash = "about"; 
-//    return false;
-//   // $($(this).attr('href')).fadeIn('slow');
-// } else {
-//     window.location.hash = "";
-//     return false;
-// }
-
-// if ($(window).scrollTop() > $('#team').position().top) {
-//     // add hash
-//     console.log('team');
-//     window.location.hash = "team";
-//     return false;
-// } else {
-//     window.location.hash = "";
-//     return false;
-// }
-
-// });
-
-// force event to fire first time
-//$('#nav').trigger('mouseout');
-
-//}); // fn
 
 
 
@@ -283,31 +252,33 @@ $('.employee').click(function () {
             $(this).find('.teamshade').addClass('show');
         }
         if ($('#joe').find('.teamshade').hasClass('show')) {
-            $('#bryanBio').addClass('hide');
-            $('#carlBio').addClass('hide');
-            $('#barbBio').addClass('hide');
-            $('.joeBio').removeClass('hide');
+            $('#bryanBio').fadeOut(200);
+            $('#carlBio').fadeOut(200);
+            $('#barbBio').fadeOut(200);
+            $('.joeBio').delay(200).fadeIn(200);
         }
         else if ($('#barbara').find('.teamshade').hasClass('show')) {
-            $('.joeBio').addClass('hide');
-            $('#bryanBio').addClass('hide');
-            $('#carlBio').addClass('hide');
-            $('#barbBio').removeClass('hide');
+            $('.joeBio').fadeOut(200);
+            $('#bryanBio').fadeOut(200);
+            $('#carlBio').fadeOut(200);
+            $('#barbBio').delay(200).fadeIn(200);
         }
          else if ($('#bryan').find('.teamshade').hasClass('show')) {
-            $('.joeBio').addClass('hide');
-            $('#carlBio').addClass('hide');
-            $('#barbBio').addClass('hide');
-            $('#bryanBio').removeClass('hide');
+            $('.joeBio').fadeOut(200);
+            $('#carlBio').fadeOut(200);
+            $('#barbBio').fadeOut(200);
+            $('#bryanBio').delay(200).fadeIn(200);
         }
         else if ($('#carl').find('.teamshade').hasClass('show')) {
-            $('.joeBio').addClass('hide');
-            $('#barbBio').addClass('hide');
-            $('#bryanBio').addClass('hide');
-            $('#carlBio').removeClass('hide');
+            $('.joeBio').fadeOut(200);
+            $('#barbBio').fadeOut(200);
+            $('#bryanBio').fadeOut(200);
+            $('#carlBio').delay(200).fadeIn(200);
         }
 }); // click fn
 
+
+// Gallery Slider
 $('#slider').on("scroll", function() {
     $('.slides').css({
         'background-position': $(this).scrollLeft()/50-120+ "px 0"
