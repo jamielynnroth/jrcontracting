@@ -337,6 +337,19 @@ var slider = {
 };
 slider.init();
 
+// More button fn on Joe Team page
+$('.moreButton').click(function() {
+    $('#joep2').show();
+    $('.moreButton').hide();
+    $('.lessButton').removeClass('hide');
+});
+
+$('.lessButton').click(function() {
+    $('#joep2').hide();
+    $('.lessButton').addClass('hide');
+    $('.moreButton').show();
+});
+
 }); // doc ready
 
 
