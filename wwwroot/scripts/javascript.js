@@ -6,7 +6,7 @@ $(document).ready(function() {
         $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
     });
 
-
+return false;
     // When the contact link is clicked load the popup box
 
         $('#nav4').click( function() {  
@@ -121,6 +121,9 @@ $(document).ready(function (){
             // mouseout 
             // if the window is not scrolled past the first section
             // hide the #selected bar
+            if ($(document).scrollTop() === 0) {
+                $('#selected').css({'top' : '78' + 'px'});
+            }
             if ($(window).scrollTop() < $('#about').position().top) {
              $('#selected').stop().fadeOut(400);
              window.location.hash="home";
@@ -242,13 +245,16 @@ $(window).scroll(function() {
 // Only highlight one employee at a time
 // Toggle on click
 // Match biobox content to employee showing
+
 $('.employee').click(function () {
+    // if an employee is showing when clicked
         if ($(this).find('.teamshade').hasClass('show')){
-             $('.employee').find('.teamshade').addClass('show');
-            $(this).find('.teamshade').removeClass('show');
+            // Do nothing
+            // $('.employee').find('.teamshade').addClass('show');
+           // $(this).find('.teamshade').removeClass('show');
         }
         else {
-             $('.employee').find('.teamshade').removeClass('show');
+            $('.employee').find('.teamshade').removeClass('show');
             $(this).find('.teamshade').addClass('show');
         }
         if ($('#joe').find('.teamshade').hasClass('show')) {
@@ -256,32 +262,81 @@ $('.employee').click(function () {
             $('#carlBio').fadeOut(200);
             $('#barbBio').fadeOut(200);
             $('.joeBio').delay(200).fadeIn(200);
+            $('.employee').find('h2').removeClass('highlight');
+            if ($('#joe').find('h2').hasClass('highlight') === false) {
+                $('#joe').find('h2').addClass('highlight');
+            }
+
+                // More button fn on Joe Team page
+                $('.moreButton').click(function() {
+                    $('#joep2').removeClass('hide');
+                    $('#joep2').show();
+                    $('.moreButton').hide();
+                    $('.lessButton').show();
+                });
+
+                $('.lessButton').click(function() {
+                    $('#joep2').addClass('hide');
+                    $('#joep2').hide();
+                    $('.lessButton').hide();
+                    $('.moreButton').show();
+                });
+
         }
         else if ($('#barbara').find('.teamshade').hasClass('show')) {
+            $('joep2').addClass('hide');
             $('.joeBio').fadeOut(200);
             $('#bryanBio').fadeOut(200);
             $('#carlBio').fadeOut(200);
-            $('#barbBio').delay(200).fadeIn(200);
+            $('#barbBio').removeClass('hide').delay(200).fadeIn(200);
+            $('.employee').find('h2').removeClass('highlight');
+            if ($('#barbara').find('h2').hasClass('highlight') === false) {
+                $('#barbara').find('h2').addClass('highlight');
+            }
         }
          else if ($('#bryan').find('.teamshade').hasClass('show')) {
+            $('joep2').addClass('hide');
             $('.joeBio').fadeOut(200);
             $('#carlBio').fadeOut(200);
             $('#barbBio').fadeOut(200);
-            $('#bryanBio').delay(200).fadeIn(200);
+            $('#bryanBio').removeClass('hide').delay(200).fadeIn(200);
+            $('.employee').find('h2').removeClass('highlight');
+            if ($('#bryan').find('h2').hasClass('highlight') === false) {
+                $('#bryan').find('h2').addClass('highlight');
+            }
         }
         else if ($('#carl').find('.teamshade').hasClass('show')) {
+            $('joep2').addClass('hide');
             $('.joeBio').fadeOut(200);
             $('#barbBio').fadeOut(200);
             $('#bryanBio').fadeOut(200);
-            $('#carlBio').delay(200).fadeIn(200);
+            $('#carlBio').removeClass('hide').delay(200).fadeIn(200);
+            $('.employee').find('h2').removeClass('highlight');
+            if ($('#carl').find('h2').hasClass('highlight') === false) {
+                $('#carl').find('h2').addClass('highlight');
+            }
         }
+
 }); // click fn
+
+   $('#joe').click(function() {
+            $('#joep2').hide();
+            $('.lessButton').hide();
+        });
+
+
+// $('.employee').click(function() {
+//     if ($(this).find('.teamshade').hasClass('show')) {
+//         $(this).removeClass('show');
+
+//     }
+// })
 
 
 // Gallery Slider
 $('#slider').on("scroll", function() {
     $('.slides').css({
-        'background-position': $(this).scrollLeft()/50-120+ "px 0"
+        'background-position': $(this).scrollLeft()/6-200+ "px 0"
     });
 });
 
@@ -311,7 +366,7 @@ var slider = {
     moveSlidePosition: function(event) {
         // Magic Numbers
         this.el.allSlides.css({
-            'background-position': $(event.target).scrollLeft()/50-120+ "px 0"
+            'background-position': $(event.target).scrollLeft()/6-200+ "px 0" //50-120+ "px 0"
         });
     }, 
 
@@ -337,18 +392,9 @@ var slider = {
 };
 slider.init();
 
-// More button fn on Joe Team page
-$('.moreButton').click(function() {
-    $('#joep2').show();
-    $('.moreButton').hide();
-    $('.lessButton').removeClass('hide');
-});
+ 
 
-$('.lessButton').click(function() {
-    $('#joep2').hide();
-    $('.lessButton').addClass('hide');
-    $('.moreButton').show();
-});
+
 
 }); // doc ready
 
