@@ -5,10 +5,10 @@ $('.flexslider').flexslider({
   });
     // Smooth scrolling
   $(".scroll").click(function(event){ 
-        event.preventDefault();
-        //console.log($(this));  
+        //event.preventDefault();
         $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
-    });
+       
+    }, false);
 
     // When the contact link is clicked load the popup box
 
