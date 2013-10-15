@@ -1,6 +1,6 @@
 @import url('styles/reset.css');
-@import url('/typography.css');
-@import url('/styles/flexslider.css');
+@import url('styles/typography.css');
+@import url('styles/flexslider.css');
 
 html {
   min-width: 1200px;
