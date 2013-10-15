@@ -11,6 +11,10 @@ body {
 			src: url('/jrcontracting/wwwroot/assets/webfonts/283BD3_0_0.ttf') format('truetype');
 		}
 
+@font-face {font-family: 'CorbertCondensed-Light';
+			src: url('/jrcontracting/wwwroot/assets/webfonts/283BD3_4_0.ttf') format('truetype');
+}
+
 @font-face {font-family: 'CorbertCondensed-Medium';
 			src: url('/jrcontracting/wwwroot/assets/webfonts/283BD3_2_0.ttf') format('truetype');
 		}
@@ -52,7 +56,7 @@ h3 {
 }
 
 h4 {
-	font-family: CorbertCondensed-Thin;
+	font-family: CorbertCondensed-Light;
 	font-size:1em;
 	line-height: 1em;
 }
@@ -68,7 +72,7 @@ h4 {
 }
 
 h5 {
-	font-family: CorbertCondensed-Thin, sans-serif;
+	font-family: CorbertCondensed-Light, sans-serif;
 	font-size: .8em; /*/*12px;*/
 	// font-weight:normal;
 }
