@@ -194,10 +194,11 @@ body {
   margin-bottom: 0;
 }
 #about #services h3 {
-  font-size: 1.5em;
+  font-size: 1.1em;
   padding-bottom: 30px;
   text-transform: lowercase;
   padding-top: 5px;
+  text-align: center;
 }
 #about #services h4 {
   font-size: 1.2em;
@@ -287,11 +288,13 @@ body {
   margin-left: 40px;
 }
 #team #team_content .employee h2 {
+  font-family: CorbertCondensed-Black;
+  font-size: 1.5em;
   text-align: center;
   color: #7e7e7e;
 }
 #team #team_content .employee .role {
-  font-family: CorbertCondensed-Light;
+  font-family: CorbertCondensed-Medium;
 }
 #team #team_content #joe.employee {
   margin-left: 0 !important;
