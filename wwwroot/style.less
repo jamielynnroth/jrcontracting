@@ -1,5 +1,6 @@
 @import url('styles/reset.css');
 @import url('/typography.less');
+@import url('/styles/flexslider.css');
 
 html {
 	min-width: 1200px;
@@ -16,9 +17,9 @@ body {
 	width: 100%;
 }
 
-section {
-	width: 1200px;
-}
+// section {
+// 	width: 1200px;
+// }
 .hide {
 	display:none;
 }
@@ -94,6 +95,7 @@ section {
 	z-index: 3;
 	position:fixed;
 	width: 100%;
+	min-width: 1200px;
 
 	#nav {
 		float: right;
@@ -160,109 +162,6 @@ section {
 }// header
 
 
-
-
-.slider {
-		width: 1600px; 
-		height: 800px;
-		overflow-x: scroll;
-		//-webkit-overflow-scroll:touch; //new
-	}
-
-.slider-nav {
-	position:relative;
-	display:block;
-	top: -635px;
-	z-index: 6;
-	left: 95%;
-
-	a {
-		background-color: #232323;
-		opacity: .7;
-		border-radius: 90px;
-		height: 10px;
-		width: 10px;
-		margin-right: 10px;
-		float:left;
-	}
-	a.active {
-		background-color: white;
-		opacity: .7;
-	}
-}
-#slider {
-	#slide-0 {
-		background-image: url("assets/photos/FinalKitchen1.jpg");
-	}	
-	#slide-1 {
-		background-image: url("assets/photos/bathroom2.jpg");
-	}
-	#slide-2 {
-		background-image: url("assets/photos/bathroom3.jpg");
-	}
-
-	
-
-	.slide {
-		float:left;
-		width: 1600px;
-		height: 800px;
-	}
-	// 	background-size:1600px;
-	// }
-	// .holder {
-
-	// 	width: 300%; // # of slides x 100
-	// 	//border-top: 3px solid grey;
-	// }
-	.holder {
-		width: 300%;
-	}
-
-	
-} // gallery
-
-	#left_control {
-		position: absolute;
-		left: 15px;
-		width: 40px;
-		height: 40px;
-		margin-top: -400px;
-		font-size: 30px;
-		font-weight: 100;
-		line-height: 33px;
-		color: white;
-		text-align: center;
-		background: #232323;
-		border: 3px solid white;
-		-webkit-border-radius: 23px;
-		-moz-border-radius: 23px;
-		border-radius: 23px;
-		opacity: 0.5;
-		filter: alpha(opacity=50);
-	}
-
-	#right_control {
-		position: absolute;
-		right: 15px;
-		width: 40px;
-		height: 40px;
-		margin-top: -400px;
-		font-size: 30px;
-		font-weight: 100;
-		line-height: 33px;
-		color: white;
-		text-align: center;
-		background: #232323;
-		border: 3px solid white;
-		-webkit-border-radius: 23px;
-		-moz-border-radius: 23px;
-		border-radius: 23px;
-		opacity: 0.5;
-		filter: alpha(opacity=50);
-
-	}
-
 #text_background {
 		background: whitesmoke;
 		height: 125px;
@@ -270,13 +169,14 @@ section {
 		opacity: .5;
 		z-index: 2;
 		position: absolute;
-		top: 605px;
+		top: 60%;//605px;
 		left: 0;
+		width: 800px;
 	}//#text_background
 
 	#photo_overlay {
 		position:absolute;
-		top: 602px;
+		top: 60%; //602px;
 		z-index: 2;
 		height: 125px;
 		left: 75px;
@@ -540,11 +440,22 @@ section {
 		color:black;
 		border:none;
 		text-align: center;
+		cursor:pointer;
 	}
 }// #team
 
 /********************************************************************/
 //CONTACT POPUP
+
+.whiteoverlay {
+	height: 2315px;
+	position: absolute;
+	z-index: 1001;
+	background-color: white;
+	width: 100%;
+	opacity: .6;
+	display:none;
+}
 
 #popupBox {
 	display:none;
@@ -559,7 +470,8 @@ section {
 	background: #FFFFFF;
 	
 	//top: 150px;
-	z-index: 100;
+	z-index: 1002;
+	overflow:auto;
 	//margin-left: 15px;
 
 	border:2px solid #DDF0E0;      
@@ -591,7 +503,7 @@ a {
 	text-decoration: none;
 }
 a:hover {
-	text-decoration: none;
+	text-decoration: underline;
 	}
 
 #popupBoxClose {
@@ -619,74 +531,7 @@ a:hover {
 	position: relative;
 	padding-top: 120px;
 }
-// 	h1 {
-// 		text-align: center;
-// 		clear:both;
-// 	}
 
-// 	form {
-// 		width: 50%;
-// 	/*	height: 100%;
-// 	*/	margin: 0 auto;
-// 		position:relative;
-
-// 		input {
-// 			display: block;
-// 			margin-bottom: 10px;
-// 		}
-// 		#submit {
-// 			margin: 20px 0 0 235px;
-// 			padding: 15px;
-// 			height:25px;
-// 			width: 50px;
-// 			font-family: 'SoinSans-Bold';
-// 			font-size: 25px;
-// 		}
-// } // form
-
-//  change this to fix the form 
-// #contact #note {
-// 	padding-top:100%;
-// 	padding-right:100%;
-// }
-
-
-
-// #form_col1 {
-// 	float:left;
-// 	position:relative;
-// 	width:35%;
-// /*	clear:both;*/
-
-// }
-// #form_col2 {
-// 	float:left;
-// 	position: relative;
-// 	width:35%;
-// 	/*clear:both;*/
-// }
-
-// #formButton {
-// 	padding: 7px;
-// 	font-family: "SoinSans-Bold";
-// 	font-weight:bold;
-// 	font-size: 30px;
-// 	background-color: black;
-// 	color:white;
-// 	border:none;
-// 	margin: 0 auto;
-// 	line-height: 36px;
-// }
-
-
-// .hidden {
-// 	display: none;
-// }
-
-
-
-
-// }
 
 .footer {
 	border-top: 2px dotted white;
@@ -698,3 +543,8 @@ a:hover {
 		padding: 20px;
 	}
 }
+
+@media only screen and (max-device-width: 1125px) {
+
+}
+

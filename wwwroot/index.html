@@ -10,17 +10,19 @@
 
 <!-- Custom Scripts -->
 	<script type="text/javascript" src="scripts/jquery.js"></script>
+	<script type="text/javascript" src="scripts/jquery.flexslider.js"></script>
 	<script type="text/javascript" src="scripts/javascript.js"></script>
-
-	<!-- Typekit embed -->
-	<!--<script type="text/javascript" src="//use.typekit.net/tlx8qzu.js"></script>
-	 <script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
-
-	<!-- MyFonts Kit Embed-->
-<!-- 	// <script type="text/javascript" src="scripts/MyFontsKit.js"></script> -->
+	
 </head>
 
 <body class="pure-g-r">
+	<div id="popupBox" class="pure-u-1">
+			<h1 class="titleInverse">contact us</h1>
+			<h2>talk to a human:</h2> <h3>888.875.4502</h3>
+			<h2>write:</h2> <h3><a href="mailto:info@joerothcontracting.com">info@joerothcontracting.com</h3>
+			<a id="popupBoxClose"><img src="assets/glyphicons_197_remove.png"></a>
+	</div>
+	<div class="whiteoverlay"></div> <!-- for the lightbox-->
 	<section id="header">
 		<div id="shade"></div>
 		<div class="header pure-u-1">
@@ -33,45 +35,45 @@
 				<div id="selected" class="hide"></div>
 				<h3>
 				<li id="nav1"><a href="#about" class="scroll">Services</a></li>
-				<li id="nav2"><a href="#team" class="scroll">About</a></li><li><a href="#">Customers</a></li>
+				<li id="nav2"><a href="#team" class="scroll">About</a></li>
+				<!-- <li><a href="#">Customers</a></li> -->
 				<li><a id="nav4">Contact</a></li>
 			</h3>
 			</ul>
 		</nav>
 		
 
-		<div id="popupBox">
-			<h1 class="titleInverse">contact us</h1>
-			<h2>talk to a human:</h2> <h3>888.875.4502</h3>
-			<h2>write:</h2> <h3><a href="mailto:info@joerothcontracting.com">info@joerothcontracting.com</h3>
-			<a id="popupBoxClose"><img src="assets/glyphicons_197_remove.png"></a>
-		</div>
+		
 
 		</section> <!-- .header-->
 
 	<section id="home" class="wrapper pure-u-1">
-	<div id="content">
+	
 
- 			<div id="slider" class="slider">
-				<div class="holder">
-					<div class="slide" id="slide-0"></div>
-					<div class="slide" id="slide-1"></div>
-					<div class="slide" id="slide-2"></div>
-				</div>
-			</div><!-- #slider-->
+ 			<div class="flexslider">
+				<!-- <div class="holder"> -->
+			<ul class="slides">
+			    <li>
+			      <img src="/assets/photos/FinalKitchen1-grade.png" />
+			    </li>
+			    <li>
+			      <img src="/assets/photos/Bathroom3.png" />
+			    </li>
+			    <li>
+			      <img src="/assets/photos/Bathroom2.png" />
+			    </li>
+			    <li>
+			      <img src="/assets/photos/Stairwell-edit.png" />
+			    </li>
+			  </ul>
 		
-		<nav class="slider-nav">
-			<a href="#slide-0" class="active"></a>
-			<a href="#slide-1"></a>
-			<a href="#slide-2"></a>
-		</nav>
+			</div><!--.flexslider-->
+		
 
-	<!-- 	<div id="left_control"><</div>
-		<div id="right_control">></div> -->
-			<div id="text_background" class="pure-u-3-5">
+			<div id="text_background" >
 					</div>
 
-				<div id='photo_overlay' class="pure-u-3-5">
+				<div id='photo_overlay' >
 					<h1>Full Service Remodeling</h1> 
 					<h2>Serving Western Mass, Southern Vermont, & New Hampshire </h2>
 				</div> <!-- #photo_overlay-->
@@ -86,8 +88,7 @@
 			</h4>
 		</div>
 	
-<!-- 		<img src="assets/photos/drawing.png">
- -->
+
 		<div id="services" class="pure-u-1-3">
 			<h3 class="subtitle"> Some of our services include:</h3>
 			<ul class="pure-u-1 row">
@@ -175,7 +176,7 @@
 								
 				<h4>
 				<p class="joeBio">Joe is a craftsman with over 30 years in the field.  His hands-on experience encompasses everything from designing and building custom furniture, installing cabinetry and trim, and custom tile work, to renovating entire houses. This experience combined with his solid foundation for craftsmanship and eye for detail allows Joe to consider the full scope of remodeling projects from start to finish.</p> 
-				<span class="joeBio moreButton button">More</span>
+				<span class="moreButton button">More</span>
 				
 
 				<p id="joep2" class="hide">Joe’s management and sales experience is also extensive; from managing the manufacturing, delivery and installation of custom store fixtures and cabinetry, to custom bathrooms and kitchens, he has worked with thousands of clients to create their dreams. Joe holds a BFA in woodworking and furniture design from the University of the Arts in Philadelphia. </p>
@@ -214,5 +215,5 @@
 	<p>&copy 2013 Joe Roth Contracting, LLC, a Home Depot certified contractor, is fully insured and up to date on all required MA Licenses. <br>We carry General Liability and Workman’s comp. We follow the rules. We are lead paint certified. <br>Joe Roth Contracting , LLC, is fully insured to protect you and your family. </p>
 	</h5>
 </section><!-- .footer-->
-</div> <!--#content - this is needed for the popup box to close-->
+
 </html>
