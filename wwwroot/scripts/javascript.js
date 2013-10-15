@@ -7,7 +7,6 @@ $('.flexslider').flexslider({
   $(".scroll").click(function(event){ 
         //event.preventDefault();
         $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
-        return false; 
     });
 
     // When the contact link is clicked load the popup box

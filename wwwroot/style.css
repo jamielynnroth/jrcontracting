@@ -154,6 +154,7 @@ body {
   height: 125px;
   left: 75px;
   border-left: none;
+  min-width: 700px;
 }
 #photo_overlay h1 {
   padding-top: 35px;
