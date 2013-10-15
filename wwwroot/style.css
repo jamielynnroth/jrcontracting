@@ -201,10 +201,7 @@ body {
   padding-top: 5px;
   text-align: center;
 }
-.subtitle {
-  text-align: left;
-  font-size: 1.4em;
-}
+
 #about #services h4 {
   font-size: 1.2em;
   line-height: 1.2em;
@@ -238,6 +235,10 @@ body {
   width: 125px;
   border-radius: 90px;
   border: 2px solid black;
+}
+.subtitle {
+  text-align: left;
+  font-size: 1.4em;
 }
 /*******************************************************************/
 /*#customers {
