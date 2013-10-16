@@ -3,7 +3,7 @@
 @import url('styles/flexslider.css');
 
 html {
-  min-width: 1200px;
+  min-width: 1350px;
   max-width: 100%;
   box-sizing: border-box;
   overflow-y: hidden;
@@ -236,9 +236,9 @@ body {
   border-radius: 90px;
   border: 2px solid black;
 }
-.subtitle {
-  text-align: left;
-  font-size: 1.4em;
+#about #services h3 .subtitle {
+  text-align: left !important;
+  font-size: 1.4em !important;
 }
 /*******************************************************************/
 /*#customers {

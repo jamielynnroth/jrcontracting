@@ -6,8 +6,7 @@ $('.flexslider').flexslider({
     // Smooth scrolling
   $(".scroll").click(function(event){ 
         //event.preventDefault();
-        $('html').animate({scrollTop:$(this.hash).offset().top}, 500);
-        return false;
+        $('html,body').stop().animate({scrollTop:$(this.hash).offset().top}, 500);
     });
 
     // When the contact link is clicked load the popup box
@@ -172,29 +171,40 @@ $(document).ready(function (){
 // force event to fire first time
 $('#nav').trigger('mouseout');
 
-
+var lastScroll = 0;
 $(window).scroll(function(event) { 
     event.preventDefault();
     event.stopPropagation();
 //check which sections have been scrolled past the top
-$('.section').each(function(event) {
+// $('.section').each(function(event) {
     //event.preventDefault();
    // event.stopPropagation();
-    if ($(window).scrollTop() < $('#about').position().top) {
+   var st = $(this).scrollTop();
+   if (st > lastScroll) {
+        if ($(window).scrollTop() < $('#about').position().top) {
         window.location.hash="home";
         return false;
-    } 
-    else if ($(window).scrollTop() >= $('#about').position().top && $(window).scrollTop() < $('#team').position().top) {
-        //console.log('about');
-        window.location.hash="about";
+        } 
+        else if ($(window).scrollTop() >= $('#about').position().top && $(window).scrollTop() < $('#team').position().top) {
+            //console.log('about');
+            window.location.hash="about";
+            return false;
+        }
+        else if ($(window).scrollTop() >= $('#team').position().top) {
+            //console.log('team');
+            window.location.hash="team";
+             return false;
+        }
+        $(this).smoothScroll();
+   } else {
+    console.log('up');
+    event.preventDefault();
+    event.stopPropagation();
+    window.location.hash=" ";
         return false;
-    }
-    else if ($(window).scrollTop() >= $('#team').position().top && $(window).scrollTop() > $('#about').position().top) {
-        //console.log('team');
-        window.location.hash="team";
-         return false;
-    }
-  // return false;
+   }
+    
+  
     // else if ($(window).scrollTop() > $(this).position().top) {
     //     var currentSection = $(this).attr('id');
     //    // $(this).data($(this).attr('id'));
@@ -206,13 +216,14 @@ $('.section').each(function(event) {
     //     window.location.hash=currentSection;
     //     return false;
     // }
-}); // each fn
+//}); // each fn
 }); // scroll fn
 
 
 
 //On scroll, check the hash
 //Highlight the correct nav item 
+$.smoothScroll = function(el, options) {
 $(window).scroll(function() {
      $('#selected').css({'top' : '48' + 'px'});
 
@@ -247,6 +258,8 @@ $(window).scroll(function() {
     }
 
 }); // scroll fn
+} // smoothScroll fn
+
 
 
 
