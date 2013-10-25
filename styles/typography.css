@@ -8,19 +8,19 @@ body {
 
 
 @font-face {font-family: 'CorbertCondensed-Thin';
-			src: url('/jrcontracting/wwwroot/assets/webfonts/283BD3_0_0.ttf') format('truetype');
+			src: url('/assets/webfonts/283BD3_0_0.ttf') format('truetype');
 		}
 
 @font-face {font-family: 'CorbertCondensed-Light';
-			src: url('/jrcontracting/wwwroot/assets/webfonts/283BD3_4_0.ttf') format('truetype');
+			src: url('/assets/webfonts/283BD3_4_0.ttf') format('truetype');
 }
 
 @font-face {font-family: 'CorbertCondensed-Medium';
-			src: url('/jrcontracting/wwwroot/assets/webfonts/283BD3_2_0.ttf') format('truetype');
+			src: url('/assets/webfonts/283BD3_2_0.ttf') format('truetype');
 		}
 
 @font-face {font-family: 'CorbertCondensed-Black';
-			src: url('/jrcontracting/wwwroot/assets/webfonts/283BD3_5_0.ttf') format('truetype');
+			src: url('/assets/webfonts/283BD3_5_0.ttf') format('truetype');
 			
 		}
 
@@ -35,9 +35,7 @@ h1 {
 	font-size: 2.7em; /*27px;*/
 	font-family: "CorbertCondensed-Black";
 	color: black;
-	// padding: 10px 0 ;
 	margin: 0;
-	// text-transform: uppercase;
 }
 
 h2 {
@@ -45,14 +43,12 @@ h2 {
 	font-size: 1.5em;/* 22px;*/
 	color: black;
 	line-height: 1.2em;
-	// font-weight: normal;
 }
 
 h3 {
 	font-family:CorbertCondensed-Medium;
 	font-size: 1em; /*16px*/
 	line-height: 1em; /*20px*/
-	// font-weight: normal;
 }
 
 h4 {
@@ -74,6 +70,10 @@ h4 {
 h5 {
 	font-family: CorbertCondensed-Light, sans-serif;
 	font-size: .8em; /*/*12px;*/
-	// font-weight:normal;
+}
+
+#services li h3 {
+	font-size: 1.1em !important; /* 18px*/
+	text-align:center;
 }
 
