@@ -72,8 +72,8 @@ h5 {
 	font-size: .8em; /*/*12px;*/
 }
 
-#services li h3 {
-	font-size: 1.1em !important; /* 18px*/
-	text-align:center;
-}
+#services h3.subtitle {
+	font-size: 1.5em !important; /* 18px */
+	text-align:left !important;
+} 
 
