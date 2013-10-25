@@ -4,7 +4,7 @@ $('.flexslider').flexslider({
     animation: "slide"
   });
     // Smooth scrolling
-  $(".scroll").click(function(event){ 
+  $(".scroll").click(function(){ 
         //event.preventDefault();
         $('html,body').stop().animate({scrollTop:$(this.hash).offset().top}, 500);
     });
@@ -200,8 +200,8 @@ $(window).scroll(function(event) {
     console.log('up');
     event.preventDefault();
     event.stopPropagation();
-    window.location.hash=" ";
-        return false;
+   // window.location.hash="";
+   //       return false;
    }
     
   
@@ -223,7 +223,9 @@ $(window).scroll(function(event) {
 
 //On scroll, check the hash
 //Highlight the correct nav item 
-$.smoothScroll = function(el, options) {
+// used to be: $.smoothScroll = function(el, options) {
+
+$.smoothScroll = function() {
 $(window).scroll(function() {
      $('#selected').css({'top' : '48' + 'px'});
 
@@ -258,7 +260,7 @@ $(window).scroll(function() {
     }
 
 }); // scroll fn
-} // smoothScroll fn
+}; // smoothScroll fn
 
 
 
